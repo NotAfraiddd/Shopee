@@ -1,0 +1,46 @@
+:root{
+    --primary-color:rgb(238, 77, 45);
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+}
+
+*{
+    /* inherit kế thừa từ thẻ chứa nó , tức là nó sẽ kế thừa hàng số 17*/
+    box-sizing: inherit;
+}
+
+html{
+    /* Hack, thì p có 1rem =10px, 1.2rem =12px */
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+/* với những màn hình có kích thuocs < 1200, thì .grid
+sẽ tương ứng với màn hình */
+.grid{
+    width: 1450px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width{
+    width: 100%;
+}
+
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* Animation */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

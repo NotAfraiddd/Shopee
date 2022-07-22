@@ -5,10 +5,116 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/shopee.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../fontawesome-free-6.1.1-web/css/all.min.css">
 </head>
 <body>
-    
+   <div class="app">
+        <header class="header">
+            <div class="grid">
+                <nav class="header__navbar">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item--qr header__navbar-item--separate">
+                            Vào cửa hàng để kết nối ứng dụng trên Shopee
+                            <div class="header__qr-code">
+                                <img src="../img/MaQR.png" alt="QR Code" class="header__qr-img">
+                                <div class="header__qr-apps">
+                                    <a href="" class="header__qr-link">
+                                        <img src="../img/AppStore.png" alt="" class="header__qr-download-img">
+                                    </a>
+                                    <a href="" class="header__qr-link">
+                                        <img src="../img/ggPlay.png" alt="" class="header__qr-download-img">
+                                    </a>
+                                </div>
+                            </div>
+                            
+                        </li>
+                        <li class="header__navbar-item">
+                            <span class="header__navbar-title--no-pointer">
+                                Kết nối
+                            </span>
+                            <a href="https://www.facebook.com/" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__notification">
+                            <a href="" class="header__navbar-item-link ">
+                                <i class="header__navbar-icon fa-solid fa-bell"></i>
+                                Thông báo
+                            </a>
+                            <div class="header__notify">
+                                <header class="header__notify-header">
+                                    <h3>Thông báo mới nhận</h3>
+                                </header>
+                                <ul class="header__notify-list">
+                                    <li class="header__notify-items header__notify-items--viewed">
+                                        <a href="" class="header__notify-link">
+                                            <img src="../img/sanfran.jpg" alt="" class="header__notify-img">
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">Mỹ phẩm Ohui chính hãng</span>
+                                                 <span class="header__notify-des">Mô tả Mỹ phẩm Ohui chính hãng</span>                                    
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="header__notify-items header__notify-items--viewed">
+                                        <a href="" class="header__notify-link">
+                                            <img src="https://kenhxachtayduc.com/wp-content/uploads/2018/06/Av%C3%A8ne-Thermalwasser-Spray-150ml-min.jpg" alt="" class="header__notify-img">
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">MANYO FACTORY Bifida Cica herb Toner 210ml</span>
+                                                 <span class="header__notify-des">Tẩy tế bào chết & TÁI TẠO làn da của bạn với #AHA #PHA #BHA #LHA</span>                                    
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="header__notify-items ">
+                                        <a href="" class="header__notify-link">
+                                            <img src="../img/sanfran.jpg" alt="" class="header__notify-img">
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">Bộ Toner & Lotion Manyo Factory Bifida Biome Ampoule 300ml</span>
+                                                 <span class="header__notify-des">CHĂM SÓC LÀN DA CỦA BẠN ĐEM ĐẾN CHO BẠN LÀN DA KHỎE MẠNH !!</span>                                    
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="header__notify-items header__notify-items--viewed">
+                                        <a href="" class="header__notify-link">
+                                            <img src="https://monngondathanh.com/wp-content/uploads/2020/07/xit-khoang-phap-2-1.jpg" alt="" class="header__notify-img">
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">Mỹ phẩm Ohui chính hãng</span>
+                                                 <span class="header__notify-des">Thời gian giao hàng dự kiến cho sản phẩm này là từ 7-9 ngày</span>                                    
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <footer class="header__notify-footer">
+                                    <a href="" class="header__notify-footer-btn">Xem tất cả</a>
+                                </footer>
+                                </div>
+                        </li>
+                        <li class="header__navbar-item">                        
+                            <a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon fa-solid fa-circle-question"></i>
+                                Trợ giúp</a>
+                        </li>
+                        <li class="header__navbar-item header__navbar-item--bold header__navbar-item--separate">Đăng ký</li>
+                        <li class="header__navbar-item header__navbar-item--bold">Đăng nhập</li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="container">
+
+        </div>
+        <footer class="footer">
+
+        </footer>
+   </div>
 </body>
 </html>
