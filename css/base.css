@@ -46,6 +46,15 @@ sẽ tương ứng với màn hình */
     }
 }
 
+@keyframes growth {
+    from {
+        transform: scale(var(--growth-from));
+    }
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
 /* button style */
 
 .btn{
@@ -85,7 +94,10 @@ sẽ tương ứng với màn hình */
 }
 
 .modal__body{
+    --growth-from:0.7;
+    --growth-to:1;
     margin: auto;
     position: relative;
     z-index: 1;
+    animation: growth linear 0.1s;
 }

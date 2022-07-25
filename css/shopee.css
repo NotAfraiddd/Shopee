@@ -271,6 +271,11 @@ nên đã dùng display:flex; và margin:auto
     right: 0;
     bottom: 0;
     left: 0;
+    display: none;
+    animation: fadeIn linear 0.1s;
+}
+
+.modal.open{
     display: flex;
 }
 
@@ -298,6 +303,8 @@ nên đã dùng display:flex; và margin:auto
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 12px;
+    margin-top: 10px;
 }
 
 .authen-form__heading{
@@ -326,6 +333,7 @@ nên đã dùng display:flex; và margin:auto
     border: 1px solid var(--border-color);
     border-radius: 2px;
     outline: none;
+    line-height: 1.6rem;
 }
 
 .authen-form__input:focus{
@@ -387,4 +395,27 @@ nên đã dùng display:flex; và margin:auto
 
 .authen-form__socials-text{
     margin: 0 36px;
+}
+
+/* form login */
+.authen-form__help{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.authen-form__help-link{
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #939393;
+}
+.authen-form__separate{
+    display: block;
+    border-left: 1px solid #eaeaea;
+    margin: 0 16px;
+    height: 22px;
+    transform: translateY(-14%);
+}
+
+.authen-form__help-forget{
+    color: var(--primary-color);
 }

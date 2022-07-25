@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopee</title>
+    <script src="../js/shopee.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/shopee.css">
-    <link rel="stylesheet" href="../">
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../fontawesome-free-6.1.1-web/css/all.min.css">
+
 </head>
 <body>
    <div class="app">
@@ -104,8 +107,8 @@
                                 <i class="header__navbar-icon fa-solid fa-circle-question"></i>
                                 Trợ giúp</a>
                         </li>
-                        <li class="header__navbar-item header__navbar-item--bold header__navbar-item--separate">Đăng ký</li>
-                        <li class="header__navbar-item header__navbar-item--bold">Đăng nhập</li>
+                        <li class="header__navbar-item header__navbar-item--bold js-register header__navbar-item--separate">Đăng ký</li>
+                        <li class="header__navbar-item header__navbar-item--bold js-login">Đăng nhập</li>
                     </ul>
                 </nav>
             </div>
@@ -117,15 +120,15 @@
 
         </footer>
    </div>
-   <div class="modal">
+   <div class="modal js-modal">
         <div class="modal__overlay">
 
         </div>
         <div class="modal__body">
         
-            <!-- form login, register -->
+            <!-- form register -->
             <!-- Authen form -->
-            <div class="authen-form">
+            <!-- <div class="authen-form">
                 <div class="authen-form__container">
                     <div class="authen-form__header">
                         <h3 class="authen-form__heading">Đăng ký</h3>
@@ -170,10 +173,78 @@
                         
                     </a>
                 </div>
+            </div> -->
 
+            <!-- form login -->
+            <div class="authen-form">
+                <div class="authen-form__container">
+                    <div class="authen-form__header">
+                        <h3 class="authen-form__heading">Đăng nhập</h3>
+                        <span class="authen-form__btn-login">Đăng ký</span>
+                    </div>
+
+                    <div class="authen-form__inputs">
+                        <div class="authen-form__group">
+                            <input type="email" required="" class="authen-form__input" placeholder="Email của bạn">
+                        </div>
+
+                        <div class="authen-form__group">
+                            <input type="password" required="" class="authen-form__input" placeholder="Mật khẩu của bạn">
+                        </div>
+
+                    </div>
+
+                    <div class="authen-form__aside">
+                        <div class="authen-form__help">
+                            <a href="" class="authen-form__help-link authen-form__help-forget">Quên mật khẩu</a>
+                            <span class="authen-form__separate"></span>
+                            <a href="" class="authen-form__help-link">Cần trợ giúp?</a>
+                        </div>
+                    </div>
+
+                    <div class="authen-form__controls">
+                        <button class="btn authen-form__controls-back btn--normal">TRỞ LẠI</button>
+                        <button class="btn btn--primary">ĐĂNG NHẬP</button>
+                    </div>
+                </div>
+
+                <div class="authen-form__socials">
+                    <a  href="" class="btn btn--size-s btn--width-icon authen-form__socials--facebook">
+                        <i class="authen-form__socials-icon fa-brands fa-facebook-square"></i>
+                        <span class="authen-form__socials-text">Kết nối với Facebook</span>  
+                    </a>
+                    <a  href="" class="btn btn--size-s btn--width-icon authen-form__socials--google">
+                        <i class="authen-form__socials-icon fa-brands fa-google"></i>
+                        <span class="authen-form__socials-text">Kết nối với Google</span>  
+                        
+                    </a>
+                </div>
             </div>
-        
         </div>
    </div>
+   <script>
+        const btnRegister = document.querySelector('.js-register')
+        const btnLogin = document.querySelector('.js-login')
+        const modal =  document.querySelector('.js-modal')
+        const modalContainer =  document.querySelector('.modal__body')
+
+        function showFormLoginRegister() {
+            modal.classList.add('open')
+        }
+
+        function hideFormLoginRegister() {
+            modal.classList.remove('open')
+        }
+
+        btnRegister.addEventListener('click',showFormLoginRegister)
+        btnLogin.addEventListener('click',showFormLoginRegister)
+        modal.addEventListener('click',hideFormLoginRegister)
+        modalContainer.addEventListener('click',function (e) {
+            e.stopPropagation()
+        })
+
+
+
+   </script>
 </body>
 </html>
