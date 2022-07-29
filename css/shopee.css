@@ -13,12 +13,100 @@
     list-style-type: none;
     padding-left: 0;
     margin: 8px 0 0 0;
+    display: flex;
 }
 
 .header__navbar-item{
     margin: 0 8px;
     position: relative;
     min-height: 22px;
+}
+
+.header__navbar-user-img{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.header__navbar-user-name{
+    margin-left: 4px;
+    font-size: 1.4rem;
+    font-weight: 400;
+
+}
+
+.header__navbar-user{
+    display: flex;
+    justify-items: center;
+    position: relative;
+}
+
+.header__navbar-user-menu{
+    position: absolute;
+    padding-left:8px;
+    top: 110%;
+    right: 0;
+    background-color:var(--white-color);
+    border-radius: 2px;
+    width: 160px;
+    list-style-type: none;
+    z-index: 1;
+    box-shadow: 0 1px 2px #cec7c7;
+    display: none;
+}
+
+.header__navbar-user-item{
+    font-size: 1.4rem;
+}
+
+.header__navbar-user-item--separate{
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.header__navbar-user-item:nth-child(1){
+    /* border-radius: 2px; */
+}
+
+.header__navbar-user-item:nth-child(4){
+    /* border-radius: 2px; */
+}
+
+.header__navbar-user-menu::before{
+    content: "";
+    display: block;
+    position: absolute;
+    border-width: 16px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    top: -26px;
+    right: 9px;
+}
+
+.header__navbar-user-menu::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: -8px;
+    right: 0;
+    width: 54%;
+    height: 12px;
+}
+
+.header__navbar-user:hover .header__navbar-user-menu{
+    display: block;
+}
+
+.header__navbar-user-item a{
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    padding: 6px 16px;
+    display: block;
+}
+
+.header__navbar-user-item a:hover{
+    background-color: #fafafa;
 }
 
 .header__navbar-item,
@@ -33,8 +121,12 @@
 .header__navbar-item,
 .header__navbar-item-link,
 .header__navbar-icon-link {
-    display: inline-flex;
+    display: flex;
     align-items: center;
+}
+
+.header__navbar-icon-link:nth-child(2){
+    margin-left: 4px;
 }
 
 .header__navbar-item--bold{
@@ -62,6 +154,7 @@
 
 .header__notification:hover .header__notify{
     display: block;
+    z-index: 1;
 }
 
 .header__navbar-item--qr:hover .header__qr-code{
@@ -136,13 +229,14 @@
     width: 404px;
     top: 140%;
     right: 0;
-    border: 1px solid #D3D3D3;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: var(--white-color);
     /* ngay chỗ này sẽ ko hiện bàn tay + line 223 */
     cursor: default;
     display: none;
     /* lấy tâm để đổ ra, rất khó chịu tìm hiểu trên gg */
-    transform-origin: calc(100% - 20px) top right;
+    transform-origin: calc(100% - 32px) top right;
     animation: headerSmallToBigInLeft ease-in 0.2s;
     will-change: opacity,transform;
 }
@@ -436,6 +530,10 @@ nên đã dùng display:flex; và margin:auto
     width: 200px;
 }
 
+.header__logo-link{
+    text-decoration: none;
+}
+
 .header__logo-img{
     width: 150px;
 }
@@ -478,32 +576,155 @@ nên đã dùng display:flex; và margin:auto
     position: absolute;
     top: calc(100% + 12px);
     right: -1px;
-    background-color: var(--white-color);
     width: 400px;
-    height: calc(100% + 150px);
     border-radius: 2px;
     box-shadow: 0 1px 3.125rem 0 rgba(0, 0, 0, 0.2);
-    display: none;
+    /* display: none; */
     animation: fadeIn ease-in 0.3s;
+    background-color: #fdfdfd;
+    display: none;
+}
+
+.header__cart-heading{
+    text-align: left;
+    margin: 8px 0 8px 12px;
+    font-size: 1.4rem;
+    color: #999;
+    font-weight: 400;
+}
+
+.header__cart-list-items{
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.header__cart-item{
+    display: flex;
+}
+
+.header__cart-item:hover{
+    background-color: #F8F8F8;
+}
+
+.header__cart-img{
+    width: 42px;
+    height: 42px;
+    margin: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.header__cart-item-info{
+    width: 100%;
+    margin-right: 12px;
+    margin-top: 11px;
+}
+
+.header__cart-item-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__cart-item-name{
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin:0;
+    text-align: left;
+}
+
+.header__cart-item-price{
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--primary-color);
+}
+
+.header__cart-item-multiply{
+    font-size: 0.9rem;
+    margin: 0 4px;
+    color: #757575;
+}
+
+.header__cart-item-quantity{
+    font-size: 1.2rem;
+    color: #757575;
+}
+
+.header__cart-item-body{
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+}
+
+.header__cart-item-descrip{
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.header__cart-item-remove{
+    font-size: 1.4rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.header__cart-item-remove:hover{
+    color: var(--primary-color);
+}
+
+.header__cart-view-cart{
+    float: right;
+    margin: 0 12px 12px 0;
+}
+
+.header__cart-view-cart:hover{
+    opacity: 0.9;
+}
+
+.header__cart-list--no-cart .header__cart--no-cart-img,
+.header__cart-list--no-cart .header__cart-list--no-cart-msg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .header__cart--no-cart{
     padding: 24px 0;
+    text-align: center;
 }
 
 .header__cart--no-cart-img{
-    width: 60%;
-    /* transform: translate(12px,40px); */
+    width: 54%;
+    display: none;
+}
+
+.header__cart-list--no-cart{
+    padding: 24px 0;
 }
 
 .header__cart-list--no-cart-msg{
-    display: block;
+    display: none;
     font-size: 1.4rem;
-    margin-top: 12px;
     color: var(--text-color);
+    margin-top: 14px;
+}
+
+.header__cart-notify{
+    position: absolute;
+    padding: 1px 7px;
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    border-radius: 10px;
+    border: 2px solid #EE4D2D;
+    top: -12px;
+    right: -8px;
+
 }
 
 .header__cart-list::after{
+    cursor: pointer;
     content: "";
     display: block;
     position: absolute;
