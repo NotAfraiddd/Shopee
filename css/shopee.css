@@ -1025,6 +1025,7 @@ nên đã dùng display:flex; và margin:auto
 .home-product-item{
     background-color: var(--white-color);
     margin-top: 10px;
+    position: relative;
 }
 
 .home-product-item__img{
@@ -1117,19 +1118,92 @@ nên đã dùng display:flex; và margin:auto
 }
 
 .home-product-item__favorite{
+    position: absolute;
+    top: 10px;
+    left: -4px;
+    /* 1125 Được 1126 ăn theo */
+    color: var(--primary-color);
+    background-color: currentColor;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    padding-right: 6px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
 
+}
+
+.home-product-item__favorite i{
+    color: var(--white-color);
+    font-size: 0.9rem;
+    margin: 0 2px 0 6px;
+}
+
+.home-product-item__favorite span{
+    color: var(--white-color);
+}
+
+.home-product-item__favorite::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    /* 1152 ăn theo 1125 luôn và 1154 là giảm độ sáng của màu ăn theo */
+    border-top: 4px solid currentColor;
+    border-left: 4px solid transparent;
+    filter: brightness(60%);
 }
 
 .home-product-item__sale-off{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 36px;
+    background-color: rgba(255,212,36,.9);
+    line-height: 1.3rem;
+    text-align: center;
+    
+    padding: 4px;
+}
 
+
+.home-product-item__sale-off::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border-top: 4px solid rgba(255,212,36,.9);
+    border-right: 21px solid transparent;
+}
+
+.home-product-item__sale-off::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    border-top: 4px solid rgba(255,212,36,.9);
+    border-left: 21px solid transparent;
+    
 }
 
 .home-product-item__sale-off-percent{
-
+    color: #EF4D2D;
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
 }
 
 .home-product-item__sale-off-label{
-
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: var(--white-color);
+    line-height: 1.4rem;
+    position: relative;
+    top: 2px;
+    right: 2px;
 }
 
 /* Do ko được ưu tiên nên đã thêm i. */
