@@ -20,7 +20,7 @@
     margin: 0 8px;
     position: relative;
     min-height: 22px;
-    z-index: 2;
+    z-index: 3;
 }
 
 .header__navbar-user-img{
@@ -892,7 +892,7 @@ nên đã dùng display:flex; và margin:auto
 
 .header__search-input:focus ~ .header__search-history{
     display: block;
-    z-index: 1;
+    z-index: 2;
 }
 
 /* App container */
