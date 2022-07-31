@@ -20,6 +20,7 @@
     margin: 0 8px;
     position: relative;
     min-height: 22px;
+    z-index: 2;
 }
 
 .header__navbar-user-img{
@@ -550,6 +551,7 @@ nên đã dùng display:flex; và margin:auto
     position: relative;
     display: inline-block;
     padding: 0 8px;
+    z-index: 2;
 }
 
 .header__cart-wrap:hover .header__cart-list{
@@ -586,6 +588,10 @@ nên đã dùng display:flex; và margin:auto
 .header__cart-list-items{
     padding-left: 0;
     list-style-type: none;
+    /* chỗ này mới cập nhật, đẻ set giỏ hàng
+    đơn vị vh là chiều cao của màn hình trình duyệt */
+    height: 56vh;
+    overflow-y: auto;
 }
 
 .header__cart-item{
@@ -621,6 +627,14 @@ nên đã dùng display:flex; và margin:auto
     color: var(--text-color);
     margin:0;
     text-align: left;
+    /* cập nhật mới */
+    line-height: 2rem;
+    max-height: 4rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    flex: 1;
 }
 
 .header__cart-item-price{
@@ -878,6 +892,7 @@ nên đã dùng display:flex; và margin:auto
 
 .header__search-input:focus ~ .header__search-history{
     display: block;
+    z-index: 1;
 }
 
 /* App container */
@@ -1022,10 +1037,29 @@ nên đã dùng display:flex; và margin:auto
 }
 
 /* product */
+.home-product{
+    margin-bottom: 10px;
+}
+
 .home-product-item{
     background-color: var(--white-color);
     margin-top: 10px;
     position: relative;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    transition: transform ease-in-out 0.1s;
+    will-change: transform;
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.home-product-item:hover{
+    /* 20px la độ nhòe */
+    cursor: pointer;
+    box-shadow: 0 1px 20px 0 rgb(0, 0, 0, 0.05);
+    transform: translateY(-1px);
 }
 
 .home-product-item__img{
@@ -1218,4 +1252,137 @@ i.home-product-item__like-icon{
 
 .home-product-item__like--liked .home-product-item__like-icon-empty{
     display: none;
+}
+
+/* pagination */
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+}
+.pagination-item{
+    margin: 0 12px;
+}
+
+.pagination-item--active .pagination-item__link{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.pagination-item--active .pagination-item__link:hover{
+    opacity: 0.8;
+}
+
+.pagination-item__link{
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 400;
+    color: rgba(0,0,0,.4);
+    /* Do thẻ a ko có display: block; */
+    display: block;
+    min-width: 40px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.home-product__pagination{
+    margin-top: 48px;
+    margin-bottom: 32px;
+}
+
+/* footer */
+.footer{
+    background-color: #fbfbfb;
+    border-top: 4px solid var(--primary-color);
+}
+
+.footer__heading{
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.54);
+    margin: 40px 0 20px;
+    font-size: 1.3rem;
+}
+
+.footer__list{
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer__list-item{
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+}
+
+.footer__list-item-link{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.54);
+    display: flex;
+    align-items: center;
+}
+
+.footer__list-item-link:hover{
+    cursor: pointer;
+    color: #ee4d2d;
+}
+
+.footer__list-item-link img{
+    width: 100%;
+    position: relative;
+    left: -10px;
+}
+
+.footer__list-item-icon-social{
+    margin-right: 8px;
+    font-size: 1.6rem;
+    color: #575151;
+}
+
+.footer__list-application{
+    display: flex;
+    cursor: pointer;
+}
+
+.footer__list-application-img{
+    border: 1px solid #ccc;
+    height: 86px;
+}
+
+.operating-system{
+    display: flex;
+    flex-wrap: wrap;
+    height: 90px;
+}
+
+.footer__list-operating-img{
+    width: 80px;
+    height: 20px;
+    margin-left: 12px;
+}
+
+.footer-list-item__no-pointer{
+    cursor: default;
+}
+
+.footer-thanh-toan{
+    margin-left: -26px;
+    margin-top: -15px;
+}
+
+.footer-van-chuyen{
+    margin-left: -10px;
+    margin-top: -10px;
+}
+
+.footer__address-detail{
+    margin: 0;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6px;
+    color: rgba(0, 0, 0, 0.6);
 }

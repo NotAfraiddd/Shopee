@@ -26,7 +26,7 @@ html{
 /* với những màn hình có kích thuocs < 1200, thì .grid
 sẽ tương ứng với màn hình */
 .grid{
-    width: 1450px;
+    width: 1200px;
     max-width: 100%;
     margin: 0 auto;
 }
@@ -59,6 +59,12 @@ sẽ tương ứng với màn hình */
     padding-left: 5px;
     padding-right: 5px;
     width: 20%;
+}
+
+.grid__col-1{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 100%;
 }
 /* Animation */
 
@@ -138,6 +144,7 @@ sẽ tương ứng với màn hình */
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 1;
 }
 
 .select-input__label{
