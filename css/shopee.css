@@ -1,3 +1,7 @@
+.app{
+    overflow: hidden;
+}
+
 .header{
     height: var(--header-height);
     background-image: linear-gradient(0,#ff6633,#f53f2d);
@@ -354,6 +358,55 @@ nên đã dùng display:flex; và margin:auto
     cursor: pointer;
 }
 
+/* Header sort bar */
+.header__sort-bar{
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    height: var( --header-sort-bar-height);
+    background-color: var(--white-color);
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    display: none;
+}
+
+.header__sort-item{
+    flex: 1;
+}
+
+.header__sort-link{
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    display: block;
+    height: 100%;
+    line-height: var( --header-sort-bar-height);
+    text-align: center;
+    position: relative;
+}
+
+.header__sort-link::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 60%;
+    transform: translateY(-50%);
+    border-left: 1px solid #e5e5e5;
+}
+
+.header__sort-link:nth-child(1) .header__sort-link::after{
+    display: 0;
+}
+
+.header__sort-item--active .header__sort-link{
+    color: var(--primary-color);
+}
+
 /* modal */
 .modal{
     position: fixed;
@@ -516,6 +569,17 @@ nên đã dùng display:flex; và margin:auto
     margin: 0 8px;
 }
 
+.header__mobile-search{
+    padding: 0 8px;
+    display: none;
+}
+
+.header__mobile-search-icon{
+    color: var(--white-color);
+    font-size: 2.6rem;
+  
+}
+
 .header__logo
 {
     width: 200px;
@@ -523,10 +587,17 @@ nên đã dùng display:flex; và margin:auto
 
 .header__logo-link{
     text-decoration: none;
+    display: block;
+    color: transparent;
+    line-height: 0;
 }
 
 .header__logo-img{
     width: 150px;
+}
+
+.header__search-checkbox:checked ~ .header__search{
+    display: flex;
 }
 
 .header__search{
@@ -590,7 +661,7 @@ nên đã dùng display:flex; và margin:auto
     list-style-type: none;
     /* chỗ này mới cập nhật, đẻ set giỏ hàng
     đơn vị vh là chiều cao của màn hình trình duyệt */
-    height: 56vh;
+    max-height: 56vh;
     overflow-y: auto;
 }
 
@@ -803,6 +874,7 @@ nên đã dùng display:flex; và margin:auto
     margin-top: 16px;
     display: none;
     animation: fadeIn ease-in 0.3s;
+    z-index: 1;
 }
 
 /* Thể hiện hover menu */
@@ -964,7 +1036,66 @@ nên đã dùng display:flex; và margin:auto
     color: var(--primary-color);
 }
 
-/* grid__col-10 */
+/* Mobile category */
+
+.mobile-category{
+
+}
+
+.mobile-category__list{
+    display: none;
+    list-style: none;
+    padding-left: 0;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.mobile-category__list::-webkit-scrollbar{
+    display: none;
+}
+
+.mobile-category__item{
+    /* Đổi thành chiều ngang */
+    flex-shrink: 0;
+}
+
+.mobile-category__item:nth-of-type(3n+1) .mobile-category__link{
+    background-color: #87AFD8;
+}
+
+.mobile-category__item:nth-of-type(3n+2) .mobile-category__link{
+    background-color: #76c9bd;
+}
+
+.mobile-category__item:nth-of-type(3n+3) .mobile-category__link{
+    background-color: #88cf81;
+}
+
+.mobile-category__link{
+    --line-height:2rem;
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 1.4rem;
+    text-align: center;
+    width:110px ;
+    height: calc(var(--line-height) * 2);
+    display: block;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-weight: 300;
+    user-select: none;
+
+    line-height: var(--line-height);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* home sort + filter*/
 
 .home-fliter{
     background-color: rgba(0, 0, 0, 0.05);
@@ -972,8 +1103,9 @@ nên đã dùng display:flex; và margin:auto
     align-items: center;
     padding: 12px 22px;
     border-radius: 2px;
-    
 }
+
+
 
 .home-fliter__btn{
     margin-right: 12px;
@@ -1291,6 +1423,7 @@ i.home-product-item__like-icon{
 .home-product__pagination{
     margin-top: 48px;
     margin-bottom: 32px;
+    padding-left: 0;
 }
 
 /* footer */
@@ -1385,4 +1518,5 @@ i.home-product-item__like-icon{
     align-items: center;
     margin-bottom: 6px;
     color: rgba(0, 0, 0, 0.6);
+    text-align: center;
 }
