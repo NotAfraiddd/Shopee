@@ -177,6 +177,7 @@
 
 .header__qr-code{
     width: 186px;
+            z-index: 1;
     background-color: var(--white-color);
     position: absolute;
     left: 0;
